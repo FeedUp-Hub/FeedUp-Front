@@ -23,15 +23,13 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="./public/6.png" alt="Logo" height="80" style="border-radius: 50%;"/>
+    <img src="https://github.com/FeedUp-Hub/FeedUp-Front/assets/83983141/0dc90cc0-e3b9-41dc-9fb5-424072dfef47" alt="Logo" height="100" style="border-radius: 50"/>
   </a>
 
   <h1 align="center">FeedUp</h1>
@@ -129,7 +127,7 @@ Follow this steps to upgrade your node version:
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the Apache 2.0 License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -227,5 +225,3 @@ Project Link: [https://github.com/FeedUp-Hub/Front/](https://github.com/FeedUp-H
 [issues-url]: https://github.com/FeedUp-Hub/FeedUp-Front/issues
 [license-shield]: https://img.shields.io/github/license/FeedUp-Hub/FeedUp-Front.svg?style=for-the-badge
 [license-url]: https://github.com/FeedUp-Hub/FeedUp-Front/LICENSE
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/bernardo-alvim
