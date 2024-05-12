@@ -1,0 +1,52 @@
+.feeling_card {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: #e6e1e1;
+    border-radius: 15px;
+    gap: 20px;
+}
+
+.feeling_card h2 {
+    margin: 0;
+    color: #1e9aec;
+}
+
+.feeling_mojis {
+    display: flex;
+    gap: 20px;
+}
+
+.feeling_mojis img:hover {
+    cursor: pointer;
+    transform: translateY(-10px); /* Eleva o emoji */
+    filter: brightness(1.2); /* Aumenta o brilho */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.feeling_mojis img:not(:hover) {
+    transition: filter 0.3s ease; /* Adiciona uma transição suave para quando não estiver em hover */
+}
+
+.feeling_tooltip {
+    position: relative;
+}
+
+.tooltip_text {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feeling_tooltip:hover .tooltip_text {
+    visibility: visible;
+    opacity: 1;
+}
