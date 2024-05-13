@@ -5,11 +5,12 @@ import Feeling from "../../Funcionalities/Feeling";
 
 export function Auth() {
     const userIsLoggedIn = () => {
-        const isLogged = localStorage.getItem('isLogged') || 'false'
-        return isLogged === 'true'
-    };
+        const loggedUser = localStorage.getItem('loggedUser')
+        if (loggedUser) {
+            return true
+        }
+        return false
+    }
 
-    return (
-        userIsLoggedIn() ? <Feeling/> : <Login />
-    )
+    return userIsLoggedIn() ? <Feeling/> : <Login />
 }
