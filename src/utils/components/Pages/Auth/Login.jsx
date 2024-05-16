@@ -46,7 +46,7 @@ export function Login() {
 
     return (
         localStorage.getItem("loggedUser") ? window.location.href = "/" :
-        <main>
+        <main className={style.main}>
             <section className={style.login_container}>
                 <img src="/2-removebg-preview.png" alt="feedup logo"/>
                 <h1>Bem vindo de volta!</h1>

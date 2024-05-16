@@ -72,12 +72,12 @@ export function Signin() {
         setConfSenha("")
 
         console.log("Usuário criado com sucesso!")
-        window.location.href = "/"
+        window.location.href = "/notes"
     }
       
 
     return (
-        <main>
+        <main className={style.main}>
             <form onSubmit={handleSubmit} className={style.signin} id="cadastro-form">
                 <Input type="text" value={nome} onchange={handleNomeChange}  id="cadastro-nome">Nome</Input>
                 <Input type="email" value={email} onchange={handleEmailChange}  id="cadastro-email">Email</Input>

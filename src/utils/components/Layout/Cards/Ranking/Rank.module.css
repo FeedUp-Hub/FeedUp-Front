@@ -1,0 +1,29 @@
+.rank {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+}
+
+.rank li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    text-align: left;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.rank hr {
+    margin: 0 20px;
+}
+
+.userPos {
+    background-color: #646cff;
+    color: #f2f2f2;
+    border-radius: 0 0 7px 7px;
+}

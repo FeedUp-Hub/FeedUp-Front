@@ -1,0 +1,29 @@
+.navigate {
+    background: none;
+    font-size: 26px;
+    transition: 250ms;
+    color: #f2f2f2;
+    font-weight: 800;
+}
+.navigate:hover {
+    background: none;
+    transition: 250ms;
+    transform: scale(1.2);
+    color: #f2f2f2;
+}
+.navigate:focus {
+    outline: none;
+}
+
+.notes {
+    background-color: #646cff;
+    padding: 30px;
+    border-radius: 20px;
+    color: #f2f2f2;
+}
+
+.nav_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

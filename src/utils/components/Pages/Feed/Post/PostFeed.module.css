@@ -1,0 +1,53 @@
+.postFeed {
+    margin: auto;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: #dad8d8;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.postFeed h2 {
+    font-size: 28px;
+    color: #4c54fc;
+    margin-bottom: 0;
+}
+
+.postFeed form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.postFeed form input:not(.postFeed form div input, .postFeed form input[type="submit"]), .postFeed form textarea{
+    width: 70%;
+    color: #838181;
+}
+
+.postFeed form select{
+    width: 73%;
+    color: #838181;
+}
+
+.postFeed form div{
+    display: flex;
+    width: 70%;
+    justify-content: start;
+    align-items: baseline;
+    margin: 10px 0;
+}
+
+.postFeed form div label{
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.postFeed form div, .postFeed form select, .postFeed form input{
+    margin-bottom: 10px;
+}
+
+
+.postFeed form input[type="submit"]{
+    width: 50%;
+}

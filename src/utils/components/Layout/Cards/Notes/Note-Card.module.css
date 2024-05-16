@@ -1,0 +1,12 @@
+.note_card_header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.note_card_header i {
+    margin-right: 10px;
+    color: #f2f2f2;
+    font-size: 28px;
+}
