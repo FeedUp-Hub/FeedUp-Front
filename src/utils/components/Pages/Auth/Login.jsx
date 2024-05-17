@@ -18,7 +18,7 @@ export function Login() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        if (!nome || !senha) {
+        if (!username || !senha) {
             alert("Por favor, preencha todos os campos.");
             return
         }
@@ -53,9 +53,8 @@ export function Login() {
                 <p>Estamos felizes por você estar de volta. Faça login para continuar.</p>
             </section>
             <form onSubmit={handleSubmit} className={style.login} id="login-form">
-                <Input type="text" value={username} onchange={handleUsernameChange}  id="login-username">Usuário</Input>
-                <a href="#" id="login-user-forget">Esqueceu seu usuário?</a>
-                <Input type="senha" value={senha} onchange={handleSenhaChange}  id="login-senha">Senha</Input>
+                <Input type="text" value={username} onchange={handleUsernameChange} required={true}  id="login-username">Usuário</Input>
+                <Input type="password" value={senha} onchange={handleSenhaChange} required={true}  id="login-senha">Senha</Input>
                 <a href="#"  id="login-senha-forget">Esqueceu sua senha?</a>
                 <Input type="submit" value="Login"  id="login-submit"/>
                 <p>Ainda sem conta? <Link to="/signin">Cadastre-se já</Link></p>

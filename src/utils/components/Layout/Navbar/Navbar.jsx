@@ -12,8 +12,8 @@ export function Navbar() {
             <Link to="/"><img src="/2-removebg-preview.png" alt="logo-feedup" /></Link>
             <ul>
                 <li><PiUserCircle onClick={console.log("oi")}/></li>
-                <li><Link to="/"><LiaHandHoldingHeartSolid /></Link></li>
-                <li><Link to="/post-feed"><CgAdd /></Link></li>
+                <li><Link to="/cultura"><LiaHandHoldingHeartSolid /></Link></li>
+                <li><Link to="/postfeed"><CgAdd /></Link></li>
             </ul>
         </nav>
     )

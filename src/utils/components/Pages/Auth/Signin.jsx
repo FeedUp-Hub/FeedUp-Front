@@ -74,17 +74,16 @@ export function Signin() {
         console.log("Usuário criado com sucesso!")
         window.location.href = "/notes"
     }
-      
 
     return (
         <main className={style.main}>
             <form onSubmit={handleSubmit} className={style.signin} id="cadastro-form">
-                <Input type="text" value={nome} onchange={handleNomeChange}  id="cadastro-nome">Nome</Input>
-                <Input type="email" value={email} onchange={handleEmailChange}  id="cadastro-email">Email</Input>
-                <Input type="text" value={trilha} onchange={handleTrilhaChange}  id="cadastro-trilha">Equipe</Input>
-                <Input type="text" value={username} onchange={handleUsernameChange}  id="cadastro-username">Usuário</Input>
-                <Input type="password" value={senha} onchange={handleSenhaChange}  id="cadastro-senha">Senha</Input>
-                <Input type="password" value={confSenha} onchange={handleConfSenhaChange}  id="cadastro-confsenha">Confirme a Senha</Input>
+                <Input type="text" value={nome} onchange={handleNomeChange} required={true} id="cadastro-nome">Nome</Input>
+                <Input type="email" value={email} onchange={handleEmailChange} required={true} id="cadastro-email">Email</Input>
+                <Input type="text" value={trilha} onchange={handleTrilhaChange} required={true} id="cadastro-trilha">Equipe</Input>
+                <Input type="text" value={username} onchange={handleUsernameChange} required={true} id="cadastro-username">Usuário</Input>
+                <Input type="password" value={senha} onchange={handleSenhaChange} required={true} id="cadastro-senha">Senha</Input>
+                <Input type="password" value={confSenha} onchange={handleConfSenhaChange} required={true} id="cadastro-confsenha">Confirme a Senha</Input>
                 <Input type="submit" value="Registrar" id="cadastro-submit"/>
                 <p>Já tem conta? <Link to="/login">Entre já</Link></p>
             </form>

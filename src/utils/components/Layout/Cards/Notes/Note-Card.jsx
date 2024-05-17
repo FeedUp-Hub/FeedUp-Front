@@ -1,6 +1,5 @@
-import React from "react";
-import style from "./Note-Card.module.css";
-
+import React from "react"
+import style from "./Note-Card.module.css"
 
 export function NoteCard({ card }) {
   return (
@@ -13,5 +12,5 @@ export function NoteCard({ card }) {
       <p>{card.description}</p>
       <img className={style.note_card_image} src={card.image} alt="note" />
     </article>
-  );
+  )
 }

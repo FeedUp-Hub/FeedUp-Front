@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import NoteCard from "../../Layout/Cards/Notes";
 
-import img1 from "/public/7-removebg-preview.png";
-import img2 from "/public/7-removebg-preview.png";
-import img3 from "/public/7-removebg-preview.png";
-import img4 from "/public/7-removebg-preview.png";
+import img1 from "../../../../assets/initial notes/img1.png";
+import img2 from "../../../../assets/initial notes/img2.png";
+import img3 from "../../../../assets/initial notes/img3.png";
+import img4 from "../../../../assets/initial notes/img4.png";
+
+import { IoIosArrowRoundBack } from "react-icons/io";
+import { IoIosArrowRoundForward } from "react-icons/io";
+
 
 import style from "./Notes.module.css"
 
@@ -36,12 +40,12 @@ export function Notes() {
   return (
     <div className={style.notes}>
         <NoteCard card={cards[currentCardIndex]} />
-        <div className={style.nav_container}>
-            <button className={style.navigate} onClick={handlePreviousCard} disabled={currentCardIndex === 0}>
-                ⟨
+        <div className={style.nav_container} style={{flexDirection: currentCardIndex === 0 ? "row-reverse" : "row"}}>
+            <button className={style.navigate} onClick={handlePreviousCard} style={{display: currentCardIndex === 0 ? "none" : "block"}}>
+                <IoIosArrowRoundBack size={40}/>
             </button>
             <button className={style.navigate} onClick={handleNextCard}>
-                ⟩
+                <IoIosArrowRoundForward size={40}/>
             </button>
         </div>
     </div>
