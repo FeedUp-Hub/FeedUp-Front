@@ -6,7 +6,7 @@ import isys_logo from "../../../../assets/partner-logo.png"
 
 export function Culture() {
   return (
-    <div className={style.main}>
+    <React.Fragment>
         <Navbar/>
         <img className={style.partner_logo} src={isys_logo} alt="" />
         <p className={style.description}>
@@ -18,12 +18,12 @@ export function Culture() {
             {valores.map((valor) => {
                 return (
                     <div className={style.card_valor} key={valor.id}>
-                        <img src={valor.image} alt="" />
+                        <img src={valor.image} alt={valor.id + ': ' + valor.value} />
                         <p>{valor.value}</p>
                     </div>
                 )
             })}
         </main>
-    </div>
+    </React.Fragment>
   )
 }

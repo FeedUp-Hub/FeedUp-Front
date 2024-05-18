@@ -55,9 +55,8 @@ export function Login() {
             <form onSubmit={handleSubmit} className={style.login} id="login-form">
                 <Input type="text" value={username} onchange={handleUsernameChange} required={true}  id="login-username">Usuário</Input>
                 <Input type="password" value={senha} onchange={handleSenhaChange} required={true}  id="login-senha">Senha</Input>
-                <a href="#"  id="login-senha-forget">Esqueceu sua senha?</a>
+                <Link to='/pwd-forget'>Esqueceu sua senha?</Link>
                 <Input type="submit" value="Login"  id="login-submit"/>
-                <p>Ainda sem conta? <Link to="/signin">Cadastre-se já</Link></p>
             </form>
         </main>
     )

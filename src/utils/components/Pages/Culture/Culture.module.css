@@ -18,6 +18,7 @@
     justify-content: center;
     gap: 10px;
     padding: 20px;
+    animation: fade 1s ease-in-out;
 }
 
 .card_valor {
@@ -34,4 +35,13 @@
     margin-top: 10px;
     width: 10em;
     border-radius: 40px;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
