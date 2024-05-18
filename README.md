@@ -73,9 +73,9 @@ A white-label product to enhance your company's feedback system.
 
 ### Prerequisites
 
-To use this chatbot you need to verify your node version.
+To use our product you need to verify your node version.
 ```sh
-  node -v //expected output: node/20.11.1 
+  node -v //expected output: version 20.11.1 
               or
   vite -v //expected output: vite/5.2.11 osx node-v20.11.1 
 ```
