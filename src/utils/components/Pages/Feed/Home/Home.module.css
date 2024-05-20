@@ -1,0 +1,29 @@
+.container {
+    display: grid;
+    grid-template-columns: 60% 30%;
+    justify-content: space-evenly;
+    padding: 2.5% 0 10% 0;
+    animation: fade 0.8s ease-in-out;
+}
+
+.container div h3 {
+    margin-bottom: 10px;
+}
+
+.feedbacks > h3 {
+    padding-left: 20px;
+    text-align: left;
+}
+
+.feedbacks > h3, .div_rank h3 {
+    color: #838181;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

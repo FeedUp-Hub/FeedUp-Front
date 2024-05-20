@@ -1,0 +1,47 @@
+
+.feedback_card {
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: #faf6f6;
+    box-shadow: 2px 2px 2px #ccc;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.card_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card_header h3 {
+    font-weight: 500;
+}
+
+
+.card_header span {
+    color: #838181;
+}
+
+.feedback_actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.send_icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: #4c54fc;
+    animation: fade .2s ease-in-out;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,47 @@
+.partner_logo {
+    margin: 20px 0;
+}
+
+.description {
+    text-align: left;
+    margin-left: 40px;
+}
+
+.lbl {
+    font-weight: 600;
+    margin: 0;
+}
+
+.culture {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    animation: fade 1s ease-in-out;
+}
+
+.card_valor {
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+.card_valor p {
+    color: #5c5b5b;
+}
+
+.card_valor img {
+    margin-top: 10px;
+    width: 10em;
+    border-radius: 40px;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

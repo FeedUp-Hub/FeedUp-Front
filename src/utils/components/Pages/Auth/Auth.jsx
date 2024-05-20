@@ -1,7 +1,6 @@
 import React from "react"
 import {Login} from "./Login"
-import Feeling from "../../Funcionalities/Feeling";
-//import {Home} from "../Home"
+import { FeedUp } from "../Feed/FeedUp"
 
 export function Auth() {
     const userIsLoggedIn = () => {
@@ -12,5 +11,5 @@ export function Auth() {
         return false
     }
 
-    return userIsLoggedIn() ? <Feeling/> : <Login />
+    return userIsLoggedIn() ? <FeedUp/> : <Login />
 }

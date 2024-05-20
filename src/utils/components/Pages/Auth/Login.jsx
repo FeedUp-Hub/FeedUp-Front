@@ -18,7 +18,7 @@ export function Login() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        if (!nome || !senha) {
+        if (!username || !senha) {
             alert("Por favor, preencha todos os campos.");
             return
         }
@@ -46,19 +46,17 @@ export function Login() {
 
     return (
         localStorage.getItem("loggedUser") ? window.location.href = "/" :
-        <main>
+        <main className={style.main}>
             <section className={style.login_container}>
                 <img src="/2-removebg-preview.png" alt="feedup logo"/>
                 <h1>Bem vindo de volta!</h1>
                 <p>Estamos felizes por você estar de volta. Faça login para continuar.</p>
             </section>
             <form onSubmit={handleSubmit} className={style.login} id="login-form">
-                <Input type="text" value={username} onchange={handleUsernameChange}  id="login-username">Usuário</Input>
-                <a href="#" id="login-user-forget">Esqueceu seu usuário?</a>
-                <Input type="senha" value={senha} onchange={handleSenhaChange}  id="login-senha">Senha</Input>
-                <a href="#"  id="login-senha-forget">Esqueceu sua senha?</a>
+                <Input type="text" value={username} onchange={handleUsernameChange} required={true}  id="login-username">Usuário</Input>
+                <Input type="password" value={senha} onchange={handleSenhaChange} required={true}  id="login-senha">Senha</Input>
+                <Link to='/pwd-forget'>Esqueceu sua senha?</Link>
                 <Input type="submit" value="Login"  id="login-submit"/>
-                <p>Ainda sem conta? <Link to="/signin">Cadastre-se já</Link></p>
             </form>
         </main>
     )
