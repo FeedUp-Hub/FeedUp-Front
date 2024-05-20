@@ -1,14 +1,16 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Input from "../../Layout/Input";
-import style from "./Auth.module.css";
+import React, { useState } from "react"
+import { Link } from "react-router-dom"
+import Input from "../../Layout/Input"
+import style from "./Auth.module.css"
+import {api} from "../../../services/api"
+import Cookies from "js-cookie"
 
 export function Login() {
-    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
 
-    const handleUsernameChange = (e) => {
-        setUsername(e.target.value)
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value)
     }
 
     const handleSenhaChange = (e) => {
@@ -18,34 +20,24 @@ export function Login() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        if (!username || !senha) {
-            alert("Por favor, preencha todos os campos.");
+        if (!email || !senha) {
+            alert("Por favor, preencha todos os campos.")
             return
         }
     
-        const Users = JSON.parse(localStorage.getItem("users")) || []
-    
-        const foundUser = Users.find(
-            (user) => user.username === username
-        )
-    
-        if (foundUser) {
-            if (foundUser.senha === senha) {
-                localStorage.setItem("loggedUser", username)
-                localStorage.setItem("loggedUser", JSON.stringify(username))
-                console.log("Login bem sucedido")
-                window.location.href = "/"
-            }
-            else {
-                alert("Senha incorreta")
-            }
-        } else {
-            alert("Usuário não encontrado")
-        }
+        const user = { email: email, password: senha }
+
+        api.post('/', user)
+          .then((res) => {
+            const data = res.data
+            Cookies.set("token", data.token, { expires:  data.expiresIn/24/60/60})
+            window.location.href = "/"
+          })
+          .catch((err) => console.error(err))
     }
 
     return (
-        localStorage.getItem("loggedUser") ? window.location.href = "/" :
+        Cookies.get("token") != undefined ? window.location.href = "/" :
         <main className={style.main}>
             <section className={style.login_container}>
                 <img src="/2-removebg-preview.png" alt="feedup logo"/>
@@ -53,7 +45,7 @@ export function Login() {
                 <p>Estamos felizes por você estar de volta. Faça login para continuar.</p>
             </section>
             <form onSubmit={handleSubmit} className={style.login} id="login-form">
-                <Input type="text" value={username} onchange={handleUsernameChange} required={true}  id="login-username">Usuário</Input>
+                <Input type="email" value={email} onchange={handleEmailChange} required={true}  id="login-email">Email</Input>
                 <Input type="password" value={senha} onchange={handleSenhaChange} required={true}  id="login-senha">Senha</Input>
                 <Link to='/pwd-forget'>Esqueceu sua senha?</Link>
                 <Input type="submit" value="Login"  id="login-submit"/>

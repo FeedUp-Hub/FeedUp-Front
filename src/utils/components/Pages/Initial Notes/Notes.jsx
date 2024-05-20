@@ -9,11 +9,11 @@ import img4 from "../../../../assets/initial notes/img4.png";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
-
 import style from "./Notes.module.css"
 
 export function Notes() {
   const [currentCardIndex, setCurrentCardIndex] = useState(0)
+  const [termsAccepted, setTermsAccepted] = useState(false)
 
   const cards = [
     { description: "Feedup é uma plataforma desenvolvida para feedback entre colaboradores", image: img1 },
@@ -25,29 +25,41 @@ export function Notes() {
   const handleNextCard = () => {
     if (currentCardIndex < cards.length - 1) {
       setCurrentCardIndex((prevIndex) => prevIndex + 1)
-    }
-    else if (currentCardIndex == cards.length - 1) {
-        window.location.href = '/feedup'
+    } else if (currentCardIndex === cards.length - 1 && termsAccepted) {
+      window.location.href = "/feedup"
+    } else if (currentCardIndex === cards.length - 1 && !termsAccepted) {
+      alert("Você precisa aceitar os termos de uso para continuar.")
     }
   }
 
   const handlePreviousCard = () => {
     if (currentCardIndex > 0) {
+      setTermsAccepted(false)
       setCurrentCardIndex((prevIndex) => prevIndex - 1)
     }
   }
 
+  const handleTermsAcceptance = () => {
+    setTermsAccepted(!termsAccepted)
+  }
+
   return (
     <div className={style.notes}>
-        <NoteCard card={cards[currentCardIndex]} />
-        <div className={style.nav_container} style={{flexDirection: currentCardIndex === 0 ? "row-reverse" : "row"}}>
-            <button className={style.navigate} onClick={handlePreviousCard} style={{display: currentCardIndex === 0 ? "none" : "block"}}>
-                <IoIosArrowRoundBack size={40}/>
-            </button>
-            <button className={style.navigate} onClick={handleNextCard}>
-                <IoIosArrowRoundForward size={40}/>
-            </button>
-        </div>
+      <NoteCard card={cards[currentCardIndex]} />
+      <div className={style.nav_container} style={{ flexDirection: currentCardIndex === 0 ? "row-reverse" : "row" }}>
+        <button className={style.navigate} onClick={handlePreviousCard} style={{ display: currentCardIndex === 0 ? "none" : "block" }}>
+          <IoIosArrowRoundBack size={40} />
+        </button>
+        {currentCardIndex === cards.length - 1 && (
+            <label htmlFor="terms_checkbox" className={style.terms_confirm}>
+              <input type="checkbox" id="terms_checkbox" onChange={handleTermsAcceptance} />
+              Li e aceito os termos de uso
+            </label>
+        )}
+        <button className={style.navigate} onClick={handleNextCard}>
+          <IoIosArrowRoundForward size={40} />
+        </button>
+      </div>
     </div>
   )
 }

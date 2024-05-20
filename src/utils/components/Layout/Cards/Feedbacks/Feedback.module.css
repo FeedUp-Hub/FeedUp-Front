@@ -23,6 +23,10 @@
     color: #838181;
 }
 
+.mentioned {
+    color: #4c54fc;
+}
+
 .feedback_actions {
     display: flex;
     align-items: center;

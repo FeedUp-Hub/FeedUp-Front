@@ -56,7 +56,7 @@
 .login a {
   margin-top: 2px;
 }
-.login input[type="text"], .forgot input[type="text"] {
+.login input[type="email"], .forgot input[type="email"] {
   margin-bottom: 15px;
 }
 
