@@ -19,6 +19,7 @@ export function Home() {
         }
       })
       .then((res) => {
+        console.log(res.data);
         setFeedupData(res.data.feedupFound.reverse());
         setUserData(res.data.users);
       })
@@ -43,5 +44,3 @@ export function Home() {
     </div>
   )
 }
-
-{/* <Feedback key={i} feedback={feedback} index={i} handleComment={handleComment} handleLike={handleLike}/> */}

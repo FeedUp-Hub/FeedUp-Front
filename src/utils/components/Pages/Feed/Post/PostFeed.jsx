@@ -26,7 +26,7 @@ export function PostFeed(){
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        const token =Cookies.get("token")
+        const token = Cookies.get("token")
 
         if (!mention || !document.getElementById("post-feedup-valor").value || !document.getElementById("post-feedup-feedback").value){
             alert("Preencha todos os campos antes de enviar o feedback")
@@ -68,6 +68,7 @@ export function PostFeed(){
     }, [submitted])
 
     return(
+        Cookies.get("token") == undefined ? window.location.href = "/" :
         <div className={style.postFeed}>
             <section className={style.post_container}>
                 {submitted ? (

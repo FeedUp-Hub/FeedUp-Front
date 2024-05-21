@@ -3,9 +3,11 @@ import style from "./Culture.module.css"
 import valores from "../../../services/valores"
 import Navbar from "../../Layout/Navbar"
 import isys_logo from "../../../../assets/partner-logo.png"
+import Cookies from "js-cookie"
 
 export function Culture() {
   return (
+    Cookies.get("token") == undefined ? window.location.href = "/" :
     <React.Fragment>
         <Navbar/>
         <img className={style.partner_logo} src={isys_logo} alt="" />

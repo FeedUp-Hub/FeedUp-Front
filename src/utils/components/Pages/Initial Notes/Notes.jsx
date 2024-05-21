@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Cookies from "js-cookie";
 import NoteCard from "../../Layout/Cards/Notes";
 
 import img1 from "../../../../assets/initial notes/img1.png";
@@ -44,6 +45,7 @@ export function Notes() {
   }
 
   return (
+    Cookies.get("token") == undefined ? window.location.href = "/" :
     <div className={style.notes}>
       <NoteCard card={cards[currentCardIndex]} />
       <div className={style.nav_container} style={{ flexDirection: currentCardIndex === 0 ? "row-reverse" : "row" }}>

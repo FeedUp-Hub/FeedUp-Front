@@ -85,6 +85,17 @@
   animation-fill-mode: both;
 }
 
+.forgot_logo {
+  height: 140px;
+  border-radius: 50%;
+}
+
+.forgot_logo:hover {
+  cursor: pointer;
+  transition: 200ms;
+  transform: scale(1.1);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

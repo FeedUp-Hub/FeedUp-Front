@@ -1,9 +1,11 @@
 import React from "react";
 import Navbar from "../../Layout/Navbar/";
 import Home from "./Home";
+import Cookies from "js-cookie";
 
 export function FeedUp() {
   return (
+    Cookies.get("token") == undefined ? window.location.href = "/" :
       <React.Fragment>
         <Navbar/>
         <Home/>

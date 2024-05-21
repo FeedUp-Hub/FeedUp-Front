@@ -14,7 +14,6 @@ import { MdSearch } from "react-icons/md"
 
 
 export function User() {
-
   const [search, setSearch] = useState("")
   const [user, setUser] = useState({})
   const [feedback_send, setFeedback_send] = useState([])
@@ -50,6 +49,7 @@ export function User() {
         }
       })
       .then((res) => {
+        console.log(res.data)
         setFeedback_received(res.data.feedback_received.reverse())
         setFeedback_send(res.data.feedback_send)
         setUser(res.data.users[0])
@@ -59,6 +59,7 @@ export function User() {
   }
 
   return (
+    Cookies.get("token") == undefined ? window.location.href = "/" :
     <React.Fragment>
         <Navbar/>
         <main className={style.profile}>
