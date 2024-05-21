@@ -19,13 +19,12 @@ export function Home() {
         }
       })
       .then((res) => {
-        console.log(res.data);
-        setFeedupData(res.data.feedupFound);
+        setFeedupData(res.data.feedupFound.reverse());
         setUserData(res.data.users);
       })
       .catch(error => console.error(error));
     }
-  }, []);
+  }, [])
 
   return (
     <div className={style.container}>

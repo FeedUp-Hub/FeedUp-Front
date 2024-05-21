@@ -43,13 +43,14 @@ export function Rank({ users }) {
                 {index < rankData.rank_users.length - 1 && <hr/>}
             </>
           ))}
-          {rankData.loggedUserPosition !== null && (
-            <li className={style.userPos}>
-              <span>{rankData.loggedUserPosition + 1}</span>
-              <p>{rankData.loggedUserInfo.username}</p>
-              <i>{rankData.loggedUserInfo.mention_count}</i>
+          {rankData.loggedUserPosition !== null ? (
+            <li className={style.userPos} key={rankData.loggedUserPosition}>
+              <span key={'pos_' + rankData.loggedUserPosition}>{rankData.loggedUserPosition + 1}</span>
+              <p key={'name_' + rankData.loggedUserInfo.username}>{rankData.loggedUserInfo.name}</p>
+              <i key={'feedups_' + rankData.loggedUserInfo.mention_count}>{rankData.loggedUserInfo.mention_count}</i>
             </li>
-          )}
+          )
+          : <p key="warning">Faça um feedback para entrar no ranking</p>}
         </ul>
       )
 }

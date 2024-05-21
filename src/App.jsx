@@ -7,7 +7,7 @@ import { FeedUp } from "./utils/components/Pages/Feed/FeedUp";
 import { Notes } from "./utils/components/Pages/Initial Notes/Notes";
 import { PostFeed } from "./utils/components/Pages/Feed/Post/PostFeed";
 import { Culture } from "./utils/components/Pages/Culture/Culture";
-import { User } from "./utils/components/Pages/Userpage/Default User/User";
+import { User } from "./utils/components/Pages/Userpage/User";
 import "./App.css";
 
 function App() {

@@ -3,7 +3,9 @@ import Input from "../../../Layout/Input"
 import style from "./PostFeed.module.css"
 import valores from "../../../../services/valores"
 import nozes_feedback from "../../../../../assets/nozes_feedback.png"
-
+import Cookies from "js-cookie"
+import {api} from "../../../../services/api"
+import {jwtDecode} from "jwt-decode"
 
 export function PostFeed(){
     const [mention, setMention] = useState("")
@@ -15,24 +17,53 @@ export function PostFeed(){
 
     const renderOption = (valor) => {
         return (
-            <option key={valor.id} value={valor.id}>
+            <option key={valor.id} value={valor.value}>
                 {valor.value}
             </option>
         )
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        // Simulate form submission (replace with actual submission logic)
-        console.log("Form submitted!");
-        setSubmitted(true);
-      };
+        e.preventDefault()
+
+        const token =Cookies.get("token")
+
+        if (!mention || !document.getElementById("post-feedup-valor").value || !document.getElementById("post-feedup-feedback").value){
+            alert("Preencha todos os campos antes de enviar o feedback")
+            return
+        }
+
+        if (mention === jwtDecode(token).username){
+            alert("Você não pode mencionar a si mesmo")
+            return
+        }
+        
+        const body = {
+            username_userreceived: mention,
+            value: document.getElementById("post-feedup-valor").value,
+            isconstructive: document.getElementById("post-feedup-construtive").checked,
+            isanonymous: document.getElementById("post-feedup-visualizacao").checked,
+            message: document.getElementById("post-feedup-feedback").value,
+        }
+
+        api.post('/forms', body, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .catch((err) => {
+            err.response.status === 404 ? alert("Você não pode mencionar alguém que não existe") : console.error(err)
+        })
+
+        console.log("Feedup submitted!")
+        setSubmitted(true)
+      }
     
     useEffect(() => {
       if (submitted) {
         setTimeout(() => {
           window.location.href = "/";
-        }, 2000);
+        }, 2000)
       }
     }, [submitted])
 
@@ -54,11 +85,20 @@ export function PostFeed(){
                 )}
             </section>
             <form onSubmit={handleSubmit}>
+
+                <div className={style.toggle}>
+                    <input type="radio" name="feedup-type" value="worth" id="post-feedup-worth" checked={true}/>
+                    <label htmlFor="post-feedup-worth">Reconhecimento</label>
+
+                    <input type="radio" name="feedup-type" value="construtive" id="post-feedup-construtive"/>
+                    <label htmlFor="post-feedup-construtive">Construtivo</label>
+                </div>
+
                 <Input id="post-feedup-mencao" type="text" value={mention} onchange={handleMentionChange} required={true}>Menção</Input>
                 <select name="valor" id="post-feedup-valor" required >{valores.map(renderOption)}</select>
                 <textarea required name="post-feedup-feedback" cols="30" rows="10" placeholder="Deixe seu feedback aqui..." maxLength="250" id="post-feedup-feedback"></textarea>
                 <div>
-                    <Input id="post-feedup-visualizacao" type="checkbox"/>
+                    <input id="post-feedup-visualizacao" type="checkbox"/>
                     <label htmlFor="post-feedup-visualizacao">Postar Anônimo</label>
                 </div>
                 <Input id="post-feedup-submit" type="submit" value="Enviar Feedback"/>

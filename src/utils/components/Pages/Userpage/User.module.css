@@ -86,6 +86,35 @@
     padding-bottom: 10%;
 }
 
+.userinfo_controller {
+    width: 50%;
+    text-align: center;
+}
+
+.search_bar {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.search_bar input {
+    width: 80%;
+    margin-right: 10px;
+}
+
+.search_icon {
+    font-size: 25px;
+    color: #4c54fc;
+    animation: fade 0.4s ease-in-out;
+    transition: 150ms;
+}
+
+.search_icon:hover {
+    transform: scale(1.12);
+    cursor: pointer;
+    transition: 150ms;
+}
+
 @media (max-width: 730px) {
     .info {
         flex-direction: column;
