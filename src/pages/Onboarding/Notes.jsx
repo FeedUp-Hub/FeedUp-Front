@@ -27,6 +27,7 @@ export function Notes() {
     if (currentCardIndex < cards.length - 1) {
       setCurrentCardIndex((prevIndex) => prevIndex + 1)
     } else if (currentCardIndex === cards.length - 1 && termsAccepted) {
+      localStorage.setItem("termsAccepted", true)
       window.location.href = "/feedup"
     } else if (currentCardIndex === cards.length - 1 && !termsAccepted) {
       alert("Você precisa aceitar os termos de uso para continuar.")
