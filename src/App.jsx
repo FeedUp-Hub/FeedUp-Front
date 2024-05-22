@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Auth } from "./utils/components/Pages/Auth/Auth";
-import { Login } from "./utils/components/Pages/Auth/Login";
-import { Forgot } from "./utils/components/Pages/Auth/Forgot";
-import { FeedUp } from "./utils/components/Pages/Feed/FeedUp";
-import { Notes } from "./utils/components/Pages/Initial Notes/Notes";
-import { PostFeed } from "./utils/components/Pages/Feed/Post/PostFeed";
-import { Culture } from "./utils/components/Pages/Culture/Culture";
-import { User } from "./utils/components/Pages/Userpage/Default User/User";
+import { Auth } from "./pages/Auth/Auth";
+import { Login } from "./pages/Auth/Login";
+import { Forgot } from "./pages/Auth/Forgot";
+import { Notes } from "./pages/Onboarding/Notes";
+import { PostFeed } from "./pages/Post/PostFeed";
+import { Culture } from "./pages/Culture/Culture";
+import { User } from "./pages/User/User";
+import { FeedUp } from "./pages/FeedUp";
 import "./App.css";
 
 function App() {
