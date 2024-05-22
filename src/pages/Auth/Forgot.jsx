@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Input from "../../Layout/Input";
+import Input from "../../components/Input";
 import style from "./Auth.module.css";
 
 export function Forgot() {

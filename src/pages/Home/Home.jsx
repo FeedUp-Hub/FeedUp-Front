@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Rank from "../../../Layout/Cards/Ranking/"
+import Rank from "../../components/Cards/Ranking"
 import style from "./Home.module.css"
-import Feedback from "../../../Layout/Cards/Feedbacks/"
+import Feedback from "../../components/Cards/Feedbacks"
 import Cookies from "js-cookie"
-import {api} from "../../../../services/api"
+import {api} from "../../services/api"
 
 export function Home() {
 

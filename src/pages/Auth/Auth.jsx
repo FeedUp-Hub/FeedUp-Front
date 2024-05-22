@@ -1,7 +1,7 @@
 import React from "react";
 import Cookies from "js-cookie"
 import { Login } from "./Login";
-import { FeedUp } from "../Feed/FeedUp";
+import { FeedUp } from "../FeedUp";
 
 export function Auth() {
   const hasValidToken = () => {

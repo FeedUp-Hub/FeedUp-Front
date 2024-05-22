@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import Input from "../../../Layout/Input/"
+import Input from "../../Input"
 import style from "./Feedback.module.css"
 import Cookies from "js-cookie"
-import { api } from "../../../../services/api"
+import { api } from "../../../services/api"
 import { jwtDecode } from "jwt-decode"
 
 import { TiHeartOutline } from "react-icons/ti"

@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
-import Input from "../../Layout/Input"
+import Input from "../../components/Input"
 import style from "./Auth.module.css"
-import {api} from "../../../services/api"
+import {api} from "../../services/api"
 import Cookies from "js-cookie"
 
 export function Login() {

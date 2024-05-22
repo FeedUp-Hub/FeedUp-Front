@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
-import Input from "../../../Layout/Input"
+import Input from "../../components/Input"
 import style from "./PostFeed.module.css"
-import valores from "../../../../services/valores"
-import nozes_feedback from "../../../../../assets/nozes_feedback.png"
+import valores from "../../services/valores"
+import nozes_feedback from "../../assets/nozes_feedback.png"
 import Cookies from "js-cookie"
-import {api} from "../../../../services/api"
+import {api} from "../../services/api"
 import {jwtDecode} from "jwt-decode"
 
 export function PostFeed(){

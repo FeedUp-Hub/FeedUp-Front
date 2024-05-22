@@ -1,8 +1,8 @@
 import React from "react"
 import style from "./Culture.module.css"
-import valores from "../../../services/valores"
-import Navbar from "../../Layout/Navbar"
-import isys_logo from "../../../../assets/partner-logo.png"
+import valores from "../../services/valores"
+import Navbar from "../../components/Navbar"
+import isys_logo from "../../assets/partner-logo.png"
 import Cookies from "js-cookie"
 
 export function Culture() {

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Cookies from "js-cookie";
-import NoteCard from "../../Layout/Cards/Notes";
+import NoteCard from "../../components/Cards/Notes";
 
-import img1 from "../../../../assets/initial notes/img1.png";
-import img2 from "../../../../assets/initial notes/img2.png";
-import img3 from "../../../../assets/initial notes/img3.png";
-import img4 from "../../../../assets/initial notes/img4.png";
+import img1 from "../../assets/initial notes/img1.png";
+import img2 from "../../assets/initial notes/img2.png";
+import img3 from "../../assets/initial notes/img3.png";
+import img4 from "../../assets/initial notes/img4.png";
 
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
