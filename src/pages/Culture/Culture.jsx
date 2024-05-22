@@ -2,7 +2,7 @@ import React from "react"
 import style from "./Culture.module.css"
 import valores from "../../services/valores"
 import Navbar from "../../components/Navbar"
-import isys_logo from "../../assets/partner-logo.png"
+//import isys_logo from "../../assets/partner-logo.png"
 import Cookies from "js-cookie"
 
 export function Culture() {
@@ -10,7 +10,7 @@ export function Culture() {
     Cookies.get("token") == undefined ? window.location.href = "/" :
     <React.Fragment>
         <Navbar/>
-        <img className={style.partner_logo} src={isys_logo} alt="" />
+        <img className={style.partner_logo} src="" alt="" />
         <p className={style.description}>
             A ioasys é uma empresa de pessoas para pessoas, buscamos sempre garantir uma cultura de trabalho fidedigna disso, através de nossos valores.
             <br />

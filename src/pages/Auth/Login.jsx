@@ -31,7 +31,8 @@ export function Login() {
           .then((res) => {
             const data = res.data
             Cookies.set("token", data.token, { expires:  data.expiresIn/24/60/60})
-            window.location.href = "/"
+            const termsAccepted = Cookies.get("termsAccepted") || false
+            termsAccepted ? window.location.href = "/" : window.location.href = "/notes"
           })
           .catch((err) => console.error(err))
     }
