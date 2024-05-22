@@ -224,4 +224,4 @@ Project Link: [https://github.com/FeedUp-Hub/Front/](https://github.com/FeedUp-H
 [issues-shield]: https://img.shields.io/github/issues/FeedUp-Hub/FeedUp-Front.svg?style=for-the-badge
 [issues-url]: https://github.com/FeedUp-Hub/FeedUp-Front/issues
 [license-shield]: https://img.shields.io/github/license/FeedUp-Hub/FeedUp-Front.svg?style=for-the-badge
-[license-url]: https://github.com/FeedUp-Hub/FeedUp-Front/LICENSE
+[license-url]: https://github.com/FeedUp-Hub/FeedUp-Front/blob/main/LICENSE
