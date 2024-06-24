@@ -124,6 +124,13 @@ Follow this steps to upgrade your node version:
    npm run dev
    ```
 
+5. Login com
+   usuário padrão de um dos devs
+   ```php
+   email: bernardo@ioasys.com
+   senha: 1234
+   ```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
